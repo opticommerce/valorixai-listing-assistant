@@ -6,17 +6,21 @@
 
 @layer base {
   :root {
+    /* Light mode */
     --background: 36 37% 97%; /* Light Cream (#FBF8F4) */
-    --foreground: 210 10% 15%;
+    --foreground: 210 10% 15%; /* Dark navy for readable text */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 210 10% 15%;
 
     --popover: 36 37% 97%;
     --popover-foreground: 210 10% 15%;
 
+    --border: 210 15% 82%;
+    --input: 0 0% 100%;
+
     --primary: 90 100% 50%; /* Lime Green (#7FFF00) */
-    --primary-foreground: 0 0% 10%;
+    --primary-foreground: 210 10% 15%; /* Dark text on bright green */
 
     --secondary: 210 45% 10%; /* Midnight Blue (#0D1B2A) */
     --secondary-foreground: 0 0% 100%;
@@ -25,12 +29,52 @@
     --muted-foreground: 0 0% 40%;
 
     --accent: 90 100% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 210 10% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
 
     --ring: 90 100% 50%;
     --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 13% 7%; /* Dark charcoal */
+    --foreground: 210 20% 98%; /* Near-white for contrast */
+
+    --card: 220 13% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 10%;
+
+    --primary: 90 100% 50%; /* Keep brand hue */
+    --primary-foreground: 210 20% 8%;
+
+    --secondary: 210 45% 90%;
+    --secondary-foreground: 210 13% 10%;
+
+    --muted: 220 13% 16%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 220 13% 16%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 210 20% 98%;
+
+    --ring: 90 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
